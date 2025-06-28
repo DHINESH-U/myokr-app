@@ -1,0 +1,185 @@
+/* index.css */
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.progress-bar {
+  transition: width 0.6s ease;
+}
+/*────────────────────────────────────────────
+  1. Color Palette & Variables
+────────────────────────────────────────────*/
+:root {
+  --primary: #4f46e5;          /* Indigo-600 */
+  --primary-light: #c7d2fe;    /* Indigo-200 */
+  --secondary: #10b981;        /* Emerald-500 */
+  --accent: #f97316;           /* Orange-500 */
+  --bg-page: #f3f4f6;          /* Gray-100 */
+  --bg-card: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/*────────────────────────────────────────────
+  2. Page & Typography
+────────────────────────────────────────────*/
+body {
+  background-color: var(--bg-page);
+  font-family: 'Inter', sans-serif;
+  color: #1f2937; /* Gray-800 */
+}
+
+h2 {
+  color: var(--primary);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60px;
+  height: 4px;
+  background: var(--secondary);
+  border-radius: 2px;
+}
+
+/*────────────────────────────────────────────
+  3. Form Cards & Containers
+────────────────────────────────────────────*/
+.form-card {
+  background: var(--bg-card);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px var(--shadow);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px var(--shadow);
+}
+
+/*────────────────────────────────────────────
+  4. Buttons
+────────────────────────────────────────────*/
+.btn-primary {
+  background: var(--primary);
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+.btn-primary:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+.btn-success {
+  background: var(--secondary);
+  border: none;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.15s ease;
+}
+.btn-success:hover {
+  background: #34d399; /* Emerald-400 */
+  transform: translateY(-2px);
+}
+.btn-outline-danger {
+  border-color: var(--accent);
+  color: var(--accent);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-outline-danger:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+/*────────────────────────────────────────────
+  5. Inputs & Selects
+────────────────────────────────────────────*/
+.form-control,
+.form-select {
+  border: 1px solid #d1d5db; /* Gray-300 */
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/*────────────────────────────────────────────
+  6. Cards for OKRs
+────────────────────────────────────────────*/
+.card {
+  background: var(--bg-card);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px var(--shadow);
+}
+
+/*────────────────────────────────────────────
+  7. Progress Bars
+────────────────────────────────────────────*/
+.progress {
+  height: 1rem;
+  background-color: #e5e7eb; /* Gray-200 */
+  border-radius: 6px;
+  overflow: hidden;
+}
+.progress-bar {
+  transition: width 0.6s ease, background-color 0.3s ease;
+  font-weight: 500;
+  color: #fff;
+}
+.progress-bar.bg-success   { background-color: #10b981; } /* Emerald-500 */
+.progress-bar.bg-info      { background-color: #3b82f6; } /* Blue-500 */
+.progress-bar.bg-warning   { background-color: #f59e0b; } /* Amber-500 */
+.progress-bar.bg-danger    { background-color: #ef4444; } /* Red-500 */
+
+/*────────────────────────────────────────────
+  8. Utility & Misc
+────────────────────────────────────────────*/
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--secondary);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  color: #fff;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
