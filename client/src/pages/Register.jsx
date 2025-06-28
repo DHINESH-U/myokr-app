@@ -17,7 +17,7 @@ const Register = () => {
   useEffect(() => {
     const fetchTeams = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/teams');
+        const res = await axios.get('https://myokr-app.onrender.com');
         setTeams(res.data);
       } catch (err) {
         console.error('Failed to load teams', err);
@@ -33,7 +33,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('https://myokr-app.onrender.com', formData);
       setMsg(res.data.msg);
     } catch (err) {
       setMsg(err.response?.data?.msg || 'Something went wrong');

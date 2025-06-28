@@ -2,6 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button, Card } from 'react-bootstrap';
+// import { motion } from 'framer-motion';
 import { motion } from 'framer-motion';
 import { FaChartLine, FaUsers, FaShieldAlt, FaBullseye, FaArrowUp } from 'react-icons/fa';
 import CountUp from 'react-countup';
@@ -103,3 +104,4 @@ const Home = () => {
 };
 
 export default Home;
+// git push -u origin main

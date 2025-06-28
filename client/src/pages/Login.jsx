@@ -13,7 +13,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+      const res = await axios.post('https://myokr-app.onrender.com', formData);
       const user = res.data.user;
 
       // ✅ Save login flag in localStorage

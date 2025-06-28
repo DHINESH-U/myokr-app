@@ -16,7 +16,7 @@ const Dashboard = () => {
   const [showConfetti, setShowConfetti] = useState(false);
 
   const getOKRs = async () => {
-    const res = await axios.get('http://localhost:5000/api/okrs');
+    const res = await axios.get('https://myokr-app.onrender.com/api/okrs');
     setOkrs(res.data);
   };
 
@@ -33,9 +33,9 @@ const Dashboard = () => {
     }
 
     if (editingId) {
-      await axios.put(`http://localhost:5000/api/okrs/${editingId}`, newOKR);
+      await axios.put(`https://myokr-app.onrender.com/api/okrs/${editingId}`, newOKR);
     } else {
-      await axios.post('http://localhost:5000/api/okrs', newOKR);
+      await axios.post('https://myokr-app.onrender.com/api/okrs', newOKR);
     }
     setNewOKR({ title: '', description: '', progress: 0 });
     setEditingId(null);
@@ -48,16 +48,16 @@ const Dashboard = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/okrs/${id}`);
+    await axios.delete(`https://myokr-app.onrender.com/api/okrs/${id}`);
     getOKRs();
   };
 
-  const getProgressBarColor = (progress) => {
-    if (progress >= 80) return 'bg-success';
-    if (progress >= 50) return 'bg-info';
-    if (progress >= 20) return 'bg-warning';
-    return 'bg-danger';
-  };
+  // const getProgressBarColor = (progress) => {
+  //   if (progress >= 80) return 'bg-success';
+  //   if (progress >= 50) return 'bg-info';
+  //   if (progress >= 20) return 'bg-warning';
+  //   return 'bg-danger';
+  // };
 
   return (
     <div className="container mt-4">
